@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Axios Link -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Bootstrap CSS Link -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -24,31 +26,39 @@
         <!-- Search Bar -->
         <form class="search-bar" id="search-bar">
           <div class="row">
-            <div class="col-9">
+            <div class="col-6">
               <input
                 type="search"
                 placeholder="Type a city.."
-                class="form-control shadow-sm"
-                id="city-input"
                 autofocus="on"
                 autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
               />
             </div>
             <div class="col-3">
               <input
                 type="submit"
                 value="Search"
-                class="form-control btn btn-primary shadow-sm"
+                class="form-control btn btn-primary shadow-sm w-100"
               />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
             </div>
           </div>
         </form>
         <!-- Weather Headline -->
-        <h1 id="city">Austin, Texas</h1>
+        <h1 id="city"></h1>
         <!-- Weather Subline -->
         <ul>
-          <li id="date">Wednesday 4:32</li>
-          <li>Sunny</li>
+          <li id="date"></li>
+          <li id="description"></li>
         </ul>
         <div class="row">
           <!-- 1st Column -->
@@ -60,7 +70,7 @@
                 class="weather-icon float-left"
               />
               <div class="float-start">
-                <span class="temperature" id="temperature">90</span
+                <span class="temperature" id="temperature"></span
                 ><span class="units">
                   <a href="#" id="celsius-link">°C</a> |
                   <a href="#" id="fahrenheit-link">°F</a>
@@ -71,9 +81,8 @@
           <!-- 2nd Column -->
           <div class="col-6">
             <ul>
-              <li>Precipitation: 3%</li>
-              <li>Humidity: 80%</li>
-              <li>Wind: 9mph</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span>mph</li>
             </ul>
           </div>
         </div>
