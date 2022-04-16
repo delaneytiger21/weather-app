@@ -24,7 +24,7 @@
   <div class="container">
     <div class="weather-app">
 
-      <form class="search-bar" id="search-bar">
+      <form>
         <input type="search" placeholder="Enter a city" autocomplete="off" id="city-input" />
         <button type="submit" value="Search" id="search-button">
           <i class="bi bi-search"></i>
@@ -41,11 +41,12 @@
       <div class="row main-row">
         <div class="col-3" id="temperature"></div>
         <div class="col-3" id="icon">
-          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
+          <img src="" alt="Clear">
         </div>
         <div class="col-6" id="details">
           <table>
             <tbody>
+         
               <tr class="top">
                 <td id="min"></td>
                 <td id="wind"></td>
@@ -72,43 +73,18 @@
       </div>
 
       <div class="row forecast">
-        <div class="col"></div>
         <div class="col">
-          <div class="forecast-day test bottom">X</div>
-          <div class="forcast-temp top">X</div>
-          <div class="forcast-description bottom">X</div>
+          <div class="forecast-day bottom">Sunday</div>
+          <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="" width="42" class="top">
+          <div class="forcast-temp bottom">
+            <span class="forecast-max">66°</span>
+            <span class="forecast-min">50°</span>
+          </div>
         </div>
-        <div class="col">
-          <div class="forecast-day bottom">X</div>
-          <div class="forcast-temp top">X</div>
-          <div class="forcast-description bottom">X</div>
-        </div>
-        <div class="col">
-          <div class="forecast-day bottom">X</div>
-          <div class="forcast-temp top">X</div>
-          <div class="forcast-description bottom">X</div>
-        </div>
-        <div class="col">
-          <div class="forecast-day bottom">X</div>
-          <div class="forcast-temp top">X</div>
-          <div class="forcast-description bottom">X</div>
-        </div>
-        <div class="col">
-          <div class="forecast-day bottom">X</div>
-          <div class="forcast-temp top">X</div>
-          <div class="forcast-description bottom">X</div>
-        </div>
-        <div class="col">
-          <div class="forecast-day bottom">X</div>
-          <div class="forcast-temp top">X</div>
-          <div class="forcast-description bottom">X</div>
-        </div>
-        <div class="col"></div>
       </div>
 
     </div>
-    <br />
-
+ 
     <footer>
       Built by <a href="#" target="_blank">Delaney Tiger</a>, <a href="https://github.com/delaneytiger21/weather-app" target="_blank">open-sourced on
         GitHub</a> and <a href="https://app.netlify.com/teams/delaneytiger21/overview" target="_blank">hosted on
@@ -116,7 +92,9 @@
     </footer>
   
   </div>
+  
   <script src="src/index.js"></script>
+
 </body>
 
 </html>
