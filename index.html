@@ -5,74 +5,78 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Axios Link -->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Weather Application</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Shippori+Mincho&family=Uchen&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <!-- Bootstrap CSS Link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+   <!-- Axios Link -->
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- CSS Link -->
   <link rel="stylesheet" href="src/style.css" />
-  <title>Weather Application</title>
 </head>
 
 <body>
-  <!-- Bootstrap Container -->
   <div class="container">
-    <!-- Document Container -->
     <div class="weather-app">
-      <!-- Search Bar -->
+
       <form class="search-bar" id="search-bar">
-        <div class="row">
-          <div class="col-6">
-            <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input"
-              class="form-control shadow-sm" />
-          </div>
-          <div class="col-3">
-            <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100" />
-          </div>
-          <div class="col-3">
-            <button class="btn btn-success w-100" id="current-location-button">
-              Current
-            </button>
-          </div>
-        </div>
+        <input type="search" placeholder="Enter a city" autocomplete="off" id="city-input" />
+        <button type="submit" value="Search" id="search-button">
+          <i class="bi bi-search"></i>
+        </button>
+        <button id="current-location-button">
+          <i class="bi bi-geo-alt"></i>
+        </button>
       </form>
-      <!-- Weather Headline -->
+
       <h1 id="city"></h1>
-      <!-- Weather Subline -->
-      <ul>
-        <li id="date"></li>
-        <li id="description"></li>
-      </ul>
+      <h5 id="date"></h5>
+      <h4 id="description"></h4>
+      
       <div class="row">
-        <!-- 1st Column -->
-        <div class="col-6">
-          <div class="clearfix">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Cloudy icon"
-              class="weather-icon float-left" />
-            <div class="float-start">
-              <span class="temperature" id="temperature"></span><span class="units">
-                <a href="#" id="celsius-link">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
-              </span>
-            </div>
-          </div>
-        </div>
-        <!-- 2nd Column -->
-        <div class="col-6">
-          <ul>
-            <li>Humidity: <span id="humidity"></span>%</li>
-            <li>Wind: <span id="wind"></span>mph</li>
-          </ul>
+        <div class="col-3" id="temperature"></div>
+        <div class="col-3" id="icon"></div>
+        <div class="col-6" id="details">
+          <table>
+            <tbody>
+              <tr class="top">
+                <td id="min"></td>
+                <td id="wind"></td>
+                <td id="sunrise">AM</td>
+              </tr>
+              <tr class="bottom">
+                <td><strong>Low</strong></td>
+                <td><strong>Wind</strong></td>
+                <td><strong>Sunrise</strong></td>
+              </tr>
+              <tr class="top">
+                <td id="max"></td>
+                <td id="humidity"></td>
+                <td id="sunset">PM</td>
+              </tr>
+              <tr class="bottom">
+                <td><strong>High</strong></td>
+                <td><strong>Humidity</strong></td>
+                <td><strong>Sunset</strong></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+      <br />
+
     </div>
-    <br />
     <footer>
       Built by Delaney Tiger <a href="https://github.com/delaneytiger21/weather-app" target="_blank">open-sourced on
         GitHub</a> and <a href="https://app.netlify.com/teams/delaneytiger21/overview" target="_blank">hosted on
         Netlify</a>
     </footer>
+  
   </div>
   <script src="src/index.js"></script>
 </body>
