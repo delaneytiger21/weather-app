@@ -1,22 +1,15 @@
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  return days[day];
-}
+// function formatDay(timestamp) {
+//   let date = new Date(timestamp * 1000);
+//   let day = date.getDay();
+//   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+//   return days[day];
+// }
+
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-    console.log(forecast)
-
+  console.log(forecast);
 }
 function getForecast(coordinates) {
   let apiKey = "80b5b4bfb3171079c6d323d0bf6f3213";
@@ -29,7 +22,7 @@ function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp) + "°";
-  document.querySelector("#icon").innerHTML = response.data.weather[0].icon;
+  
   document.querySelector("#min").innerHTML = Math.round(response.data.main.temp_min) + "°";
   document.querySelector("#max").innerHTML = Math.round(response.data.main.temp_max)+"°";
   document.querySelector("#humidity").innerHTML = response.data.main.humidity +"%";
@@ -40,6 +33,11 @@ function showWeather(response) {
   let sunset = document.querySelector("#sunset");
   let setElement = response.data.sys.sunset;
   sunset.innerHTML = new Date(setElement * 1e3).toLocaleTimeString();
+
+  let iconElement = document.querySelector("img");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+
 
   getForecast(response.data.coord);
 }
@@ -71,6 +69,7 @@ function getCurrentLocation(event) {
 function formatDate(date) {
   return(date.toLocaleTimeString('en-US'));
 }
+
 
 
 let searchBar = document.querySelector("#search-bar");

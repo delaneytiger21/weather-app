@@ -67,11 +67,13 @@ h4 {
   text-transform: capitalize;
 }
 
-.main {
+
+.main-row {
   margin: 25px 0px 25px 0px;
   border-bottom: 2px solid #879855;
   letter-spacing: 1px;
 }
+
 #temperature {
   color: #F49E85;
   font-size: 90px;
@@ -80,14 +82,13 @@ h4 {
   width: 25%;
   margin: 25px 0px 25px 0px;
 }
+
 #icon {
-  color: #F49E85;
-  font-size: 90px;
-  font-weight: 400;
   padding: 0px;
   width: 25%;
   margin: 25px 0px 25px 0px;
 }
+
 #details {
   border-left: 2px solid #879855;
   margin: 25px 0px 25px 0px;
