@@ -18,6 +18,7 @@ body {
   margin-top: 150px;
 }
 
+
 form {
   margin-bottom: 20px; 
   text-align: right;
@@ -30,7 +31,7 @@ form {
   background-color: #FFFEF6;
   color: #596D4A;
   text-align: right;
-  letter-spacing: 2px;
+  letter-spacing: 1.75px;
 }
 button {
   width: 50px;
@@ -39,36 +40,41 @@ button {
   color: #596D4A;
   background-color: #FFFEF6;
 }
+button :hover{
+  color: #F49E85;
+}
+
 
 h1 {
   color: #879855;
-  font-size: 85px;
+  font-size: 80px;
   margin: 0 auto;
   font-weight: 400;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
 }
 h5 {
   color: #F49E85;
   font-weight: 500;
   margin: 0 auto;
   line-height: 1.5;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 h4 {
   color: #596D4A;
   margin: 0 auto;
   line-height: 2;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: capitalize;
 }
 
-.row {
+.main {
   margin: 25px 0px 25px 0px;
   border-bottom: 2px solid #879855;
+  letter-spacing: 1px;
 }
 #temperature {
   color: #F49E85;
-  font-size: 100px;
+  font-size: 90px;
   font-weight: 400;
   padding: 0px;
   width: 25%;
@@ -76,7 +82,7 @@ h4 {
 }
 #icon {
   color: #F49E85;
-  font-size: 100px;
+  font-size: 90px;
   font-weight: 400;
   padding: 0px;
   width: 25%;
@@ -88,46 +94,41 @@ h4 {
   height: 150px;
 }
 td {
-    width: 250px;
-    padding: 7px;
+  width: 250px;
+  padding: 7px;
+  line-height: 1;
 }
 .top {
-  font-size: 18px;
+  font-size: 17px;
   color: #596D4A;
 }
-.bottom{
-  font-size: 14px;
+.bottom {
+  font-size: 15px;
   color: #F49E85;
 }
 
-
-ul {
-  margin: 0 auto;
-  padding: 10px;
+.forecast {
+  margin: 25px 0px 25px 0px;
+  padding: 7px;
 }
-li {
-  color: #596D4A;
-  font-size: 16px;
-  line-height: 1.2;
-  list-style: none;
-  letter-spacing: 2px;
+.col {
+  width: 100px;
+  line-height: 2;
 }
 
 
-footer{
+footer {
   text-align: center;
   font-size: 12px;
-  color: #879856;
+  color: #F49E85;
   letter-spacing: 1.5px;
- 
 }
-
 footer a { 
-  color: white;
+  color: #F49E85;
+  text-decoration: none;
 }
-
 footer a:hover {
-  color: #596D4A
+  color: #596D4A;
 }
 
 
