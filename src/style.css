@@ -19,9 +19,12 @@ body {
 }
 
 
+
 form {
   margin-bottom: 20px; 
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 #city-input {
   font-size: 18px;
@@ -72,6 +75,8 @@ h4 {
   margin: 0px 0px 25px 0px;
   border-bottom: 2px solid #879855;
   letter-spacing: 1px;
+  display: flex;
+  justify-content: space-evenly;
 }
 #temperature {
   color: #F5A187;
@@ -79,6 +84,7 @@ h4 {
   padding: 45px 30px 35px 30px;
   width: 25%;
   margin: 25px 0px 25px 0px;
+
 }
 #icon {
   padding: 35px 30px;
@@ -94,6 +100,7 @@ img {
   width: 50%;
   margin: 25px auto;
   padding: 45px 30px 35px 30px;
+
 }
 td {
   width: 250px;
@@ -137,3 +144,32 @@ footer a:hover {
 }
 
 
+@media screen and (max-width: 800px) {
+  form {
+    justify-content: center;
+  }
+  h1 {
+    font-size: 70px;
+  }
+  #temperature {
+    font-size: 65px;
+    padding: 35px 6px;
+    width: 50%;
+    border-right: 2px solid #879855;
+  } 
+  #icon {
+    padding: 0px;
+    width: 50%;
+    height: 50%;
+  }
+  #details {
+    display: none;
+  }
+  table {
+    display: flex;
+    justify-content: center;
+  }
+  td {
+    font-size: 14px;
+  }
+}
