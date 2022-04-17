@@ -151,11 +151,14 @@ footer a:hover {
   h1 {
     font-size: 70px;
   }
+  .main-row {
+    border-bottom: 1px solid #879855;
+  }
   #temperature {
     font-size: 65px;
     padding: 35px 6px;
     width: 50%;
-    border-right: 2px solid #879855;
+    border-right: 1px solid #879855;
   } 
   #icon {
     padding: 0px;
