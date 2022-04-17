@@ -1,18 +1,34 @@
-// function formatDay(timestamp) {
-//   let date = new Date(timestamp * 1000);
-//   let day = date.getDay();
-//   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-//   return days[day];
-// }
-
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  return days[day];
+}
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML = forecastHTML +
+        ` <div class="col">
+            <div class="bottom">${formatDay(forecastDay.dt)}</div>
+            <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png">
+            <div class="bottom">
+              <span>${Math.round(forecastDay.temp.max)}°</span>
+              <span>${Math.round(forecastDay.temp.min)}°</span>
+            </div>
+          </div> `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
+
+  
 function getForecast(coordinates) {
-  let apiKey = "80b5b4bfb3171079c6d323d0bf6f3213";
+  let apiKey = "343e26b3ffb2c17a61d6a1123defd48c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -33,7 +49,7 @@ function showWeather(response) {
   let sunset = document.querySelector("#sunset");
   let setElement = response.data.sys.sunset;
   sunset.innerHTML = new Date(setElement * 1e3).toLocaleTimeString();
-  
+
   getForecast(response.data.coord);
 }
 
@@ -62,6 +78,7 @@ function formatDate(date) {
   return(date.toLocaleTimeString('en-US'));
 }
 
+
 let form = document.querySelector("form");
 form.addEventListener("submit", submitSearch);
 
@@ -73,8 +90,6 @@ let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
 search("Austin");
-
-
 
 
 
